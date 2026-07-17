@@ -19,7 +19,7 @@ ll PD(int idx, int peso_mochila){
 
 
     if(peso[idx] > peso_mochila) return p = PD(idx+1, peso_mochila);
-    return max(PD(idx + 1, peso_mochila),
+    return p = max(PD(idx + 1, peso_mochila),
                PD(idx + 1,peso_mochila - peso[idx]) + valor[idx]);
 }
 
