@@ -6,8 +6,18 @@ using ll = long long;
 int n,w;
 vector<ll> peso, valor;
 
+const int MAX = le5+5;
+ll memo{101[MAX];
+
+
+
 ll PD(int idx, int peso_mochila){
     if (idx == n) return 0;
+
+    auto &p = memo[idx][peso_mochila]
+    if(p != -1) return p;
+
+
     if(peso[idx] > peso_mochila) return PD(idx+l, peso_mochila);
     return max(PD(idx + 1, peso_mochila),
                PD(idx + l,peso_mochila - peso[idx]) + valor[idx]);
@@ -21,6 +31,9 @@ int main(){
     peso.resize(n), valor.resize(n);
 
     for(int i = 0; i < n ; i++){
-    cin >> peso[i] >> valor[i]
+        cin >> peso[i] >> valor[i];
     }
+    memset(memo,-1,sizeof(memo));
+    cout <<PD(0,W) << "\n";
+
 }
