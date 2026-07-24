@@ -9,5 +9,11 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         cin >> moves[i];
-}
+    }
+
+    vector<bool> dp(k + 1, false);
+
+    for (int i = 1; i <= k; i++) {
+
+    }
 }
