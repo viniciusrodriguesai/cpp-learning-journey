@@ -15,6 +15,9 @@ int main() {
     }
 
     long long mdc = a;
+    long long mmc = (originalA * originalB) / mdc;
+
+    cout << mmc << endl;
 
     return 0;
 }
