@@ -6,8 +6,12 @@ int main() {
     cin >> a >> b;
 
     while (b != 0) {
-
+        long long resto = a % b;
+        a = b;
+        b = resto;
     }
+
+    long long mdc = a;
 
     return 0;
 }
