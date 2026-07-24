@@ -14,6 +14,11 @@ int main() {
     vector<bool> dp(k + 1, false);
 
     for (int i = 1; i <= k; i++) {
-
+        for (int j = 0; j < n; j++) {
+            if (moves[j] <= i && dp[i - moves[j]] == false) {
+                dp[i] = true;
+                break;
+            }
+        }
     }
 }
