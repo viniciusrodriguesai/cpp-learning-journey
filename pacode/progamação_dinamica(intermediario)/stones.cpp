@@ -21,4 +21,12 @@ int main() {
             }
         }
     }
+
+    if (dp[k] == true) {
+        cout << "First" << endl;
+    } else {
+        cout << "Second" << endl;
+    }
+
+    return 0;
 }
