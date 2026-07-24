@@ -17,6 +17,8 @@ int main() {
 
         if (a[0] + a[1] <= a[n - 1]) {
             cout << 1 << " " << 2 << " " << n << endl;
+        } else {
+            cout << -1 << endl;
         }
     }
 
