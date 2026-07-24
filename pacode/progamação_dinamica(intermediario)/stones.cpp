@@ -6,3 +6,8 @@ int main() {
     cin >> n >> k;
 
     vector<int> moves(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> moves[i];
+}
+}
