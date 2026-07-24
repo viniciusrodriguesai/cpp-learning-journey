@@ -14,6 +14,10 @@ int main() {
         for (int i = 0; i < n; i++) {
             cin >> a[i];
         }
+
+        if (a[0] + a[1] <= a[n - 1]) {
+            cout << 1 << " " << 2 << " " << n << endl;
+        }
     }
 
     return 0;
