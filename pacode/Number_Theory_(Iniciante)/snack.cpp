@@ -5,6 +5,9 @@ int main() {
     long long a, b;
     cin >> a >> b;
 
+    long long originalA = a;
+    long long originalB = b;
+
     while (b != 0) {
         long long resto = a % b;
         a = b;
