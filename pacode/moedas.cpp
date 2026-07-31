@@ -1,19 +1,14 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int n;
-    cin >> n;
+    int n, cont = 0;
     string s;
-    cin >> s;
-    int remocoes = 0;
-    for (int i = 0; i < n - 1; i++) {
-        if (s[i] == s[i + 1]) {
-            remocoes++;
+    cin >> n >> s;
+    for (int i = 1; i < n; i++) {
+        if (s[i] == s[i - 1]) {
+            cont++;
         }
     }
-    cout << remocoes << "\n";
+    cout << cont << '\n';
     return 0;
 }
