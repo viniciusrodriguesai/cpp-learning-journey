@@ -41,3 +41,18 @@ int main() {
         a.push_back({s, bestR, ids});
         i = j;
     }
+    vector<P> good;
+    long long maxR = 0;
+    for (int i = (int)a.size() - 1; i >= 0; i--) {
+        if (a[i].r > maxR) {
+            good.push_back(a[i]);
+            maxR = a[i].r;
+        }
+    }
+    reverse(good.begin(), good.end());
+    vector<P> hull;
+    for (auto p : good) {
+        while (hull.size() >= 2 && maiorInter(hull[hull.size() - 2], hull.back(), p))
+            hull.pop_back();
+        hull.push_back(p);
+    }
