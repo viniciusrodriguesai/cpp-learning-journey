@@ -56,3 +56,15 @@ int main() {
             hull.pop_back();
         hull.push_back(p);
     }
+        vector<int> ans;
+    for (auto &p : hull)
+        for (int id : p.id)
+            ans.push_back(id);
+    sort(ans.begin(), ans.end());
+    for (int i = 0; i < (int)ans.size(); i++) {
+        if (i) cout << ' ';
+        cout << ans[i];
+    }
+    cout << '\n';
+    return 0;
+}
