@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-        ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int N;
     cin >> N;
@@ -15,4 +15,13 @@ int main() {
     for (auto& p : freq) {
         if (p.second > max_freq) max_freq = p.second;
     }
+    vector<string> ans;
+    for (auto& p : freq) {
+        if (p.second == max_freq) ans.push_back(p.first);
+    }
+    sort(ans.begin(), ans.end());
+    for (const string& s : ans) {
+        cout << s << '\n';
+    }
+    return 0;
 }
