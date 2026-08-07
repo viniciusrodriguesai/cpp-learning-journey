@@ -1,37 +1,101 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-ll pow10[7] = {1, 10, 100, 1000, 10000, 100000, 1000000};
-struct Card {
-    int val, len;
-};
 int main() {
-    ios_base::sync_with_stdio(false);
+    ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int N;
     cin >> N;
-    vector<Card> cards(N);
-    for (int i = 0; i < N; ++i) {
-        int x;
-        cin >> x;
-        int len = 1;
-        if (x >= 10) ++len;
-        if (x >= 100) ++len;
-        if (x >= 1000) ++len;
-        if (x >= 10000) ++len;
-        if (x >= 100000) ++len;
-        if (x >= 1000000) ++len;
-        cards[i] = {x, len};
+    vector<vector<int>> a(N, vector<int>(N, 0));
+    vector<bool> used(N * N + 1, false);
+    auto put = [&](int i, int j, int x) {
+        a[i][j] = x;
+        used[x] = true;
+    };
+    if (N % 2 == 0) {
+        int k = N / 2;
+        int C = 2 * N + 1;
+        while (C % 6 != 3)
+            C++;
+        for (int j = 0; j < N; j++) {
+            int odd = 2 * j + 1;
+            int even = C - odd;
+            put(k - 1, j, odd);
+            put(k, j, even);
+        }
+        vector<int> odds, evens;
+        for (int x = 1; x <= N * N; x++) {
+            if (used[x]) continue;
+            if (x % 2)
+                odds.push_back(x);
+            else
+                evens.push_back(x);
+        }
+        int po = 0, pe = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (a[i][j] != 0)
+                    continue;
+                if (i < k)
+                    put(i, j, odds[po++]);
+                else
+                    put(i, j, evens[pe++]);
+            }
+        }
+    } else {
+        int k = N / 2;
+        put(k - 1, k + 1, 1);
+        put(k, k + 1, 8);
+        put(k, k, 7);
+        put(k + 1, k, 2);
+        int t = 0;
+        for (int j = k + 2; j < N; j++) {
+            int odd = 6 * t + 3;
+            int even = 6 * t + 6;
+            put(k - 1, j, odd);
+            put(k, j, even);
+            t++;
+        }
+        for (int j = 0; j < k; j++) {
+            int odd = 6 * t + 3;
+            int even = 6 * t + 6;
+            put(k, j, odd);
+            put(k + 1, j, even);
+            t++;
+        }
+        vector<int> odds, evens;
+        for (int x = 1; x <= N * N; x++) {
+            if (used[x]) continue;
+            if (x % 2)
+                odds.push_back(x);
+            else
+                evens.push_back(x);
+        }
+        int po = 0, pe = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (a[i][j] != 0)
+                    continue;
+                bool oddRegion;
+                if (i < k)
+                    oddRegion = true;
+                else if (i > k)
+                    oddRegion = false;
+                else
+                    oddRegion = (j <= k);
+                if (oddRegion)
+                    put(i, j, odds[po++]);
+                else
+                    put(i, j, evens[pe++]);
+            }
+        }
     }
-    sort(cards.begin(), cards.end(), [](const Card& a, const Card& b) {
-        ll ab = (ll)a.val * pow10[b.len] + b.val;
-        ll ba = (ll)b.val * pow10[a.len] + a.val;
-        return ab > ba;
-    });
-    ll ans = 0;
-    for (int i = 0; i < 3; ++i) {
-        ans = ans * pow10[cards[i].len] + cards[i].val;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (j)
+                cout << ' ';
+            cout << a[i][j];
+        }
+        cout << '\n';
     }
-    cout << ans << '\n';
     return 0;
 }
