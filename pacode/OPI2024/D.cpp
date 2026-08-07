@@ -11,6 +11,7 @@ int main() {
         cin >> x;
         if (x & 1) tem_impar = true;
     }
-
+    cout << (tem_impar ? "First" : "Second") << '\n';
+    return 0;
 }
 
