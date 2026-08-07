@@ -11,5 +11,7 @@ int main() {
         N /= K;
         ++digitos;
     }
+    cout << digitos << '\n';
+    return 0;
 
 }
