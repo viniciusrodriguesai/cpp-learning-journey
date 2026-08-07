@@ -5,3 +5,39 @@ struct P {
     vector<int> id;
 };
 
+__int128 num(const P& a, const P& b) {
+    return (__int128)a.s * b.s * (a.r - b.r);
+}
+__int128 den(const P& a, const P& b) {
+    return (__int128)a.r * b.r * (b.s - a.s);
+}
+bool maiorInter(const P& a, const P& b, const P& c) {
+    return num(a, b) * den(b, c) > num(b, c) * den(a, b);
+}
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n;
+    cin >> n;
+    vector<tuple<int,int,int>> v;
+    for (int i = 1; i <= n; i++) {
+        int s, r;
+        cin >> s >> r;
+        v.push_back({s, -r, i});
+    }
+        sort(v.begin(), v.end());
+    vector<P> a;
+    for (int i = 0; i < n;) {
+        int j = i;
+        int s = get<0>(v[i]);
+        int bestR = -get<1>(v[i]);
+        vector<int> ids;
+        while (j < n && get<0>(v[j]) == s) {
+            int r = -get<1>(v[j]);
+            if (r == bestR)
+                ids.push_back(get<2>(v[j]));
+            j++;
+        }
+        a.push_back({s, bestR, ids});
+        i = j;
+    }
