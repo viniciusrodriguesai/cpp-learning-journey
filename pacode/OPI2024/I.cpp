@@ -17,4 +17,17 @@ int main() {
     queue<int> q;
     cor[1] = 0;
     q.push(1);
+        while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        cnt[cor[u]]++;
+        for (int v : g[u]) {
+            if (cor[v] == -1) {
+                cor[v] = cor[u] ^ 1;
+                q.push(v);
+            }
+        }
+    }
+    cout << cnt[0] * cnt[1] - (n - 1) << '\n';
+    return 0;
 }
