@@ -68,10 +68,10 @@ Every problem from **A to J was accepted by the online judge**. Each problem has
 | --- | --- | --- |
 | C++ fundamentals | Variables, constants, scope, operators, increment, and first programs | [`01-fundamentos/`](01-fundamentos/) |
 | Number theory | Prime numbers, divisors, factorization, and numerical properties | [`pacode/Number_Theory_(Iniciante)/`](<pacode/Number_Theory_(Iniciante)/>) |
-| Dynamic programming | Frog, knapsack, paths, and state-based solutions | [`pacode/`](pacode/) |
+| Dynamic programming | Frog, knapsack, paths, and state-based solutions | [`pacode/exercicios_avulsos/`](pacode/exercicios_avulsos/) |
 | OPI 2024 | Complete accepted set of problems A–J with statements and solutions | [`pacode/OPI2024/`](pacode/OPI2024/) |
 | OPI 2025 | Solutions and experiments for several contest problems | [`pacode/opi_2025/`](pacode/opi_2025/) |
-| Algorithm practice | Logic, graphs, modular arithmetic, sorting, searching, NTT, and DSU | [`pacode/`](pacode/) |
+| Standalone exercises | Divisors and classic dynamic-programming problems | [`pacode/exercicios_avulsos/`](pacode/exercicios_avulsos/) |
 
 ### Current structure
 
@@ -83,10 +83,12 @@ cpp-learning-journey/
 │   ├── OPI2024/                    # 10/10 accepted: problems A through J
 │   ├── opi_2025/                   # OPI 2025 solutions and studies
 │   ├── programação_dinamica.../    # Intermediate track in progress
-│   ├── frogg.cpp                   # Dynamic programming practice
-│   ├── frogg2.cpp                  # A variation of the Frog problem
-│   ├── knapsack_1.cpp              # The classic knapsack problem
-│   └── divisores.cpp               # Divisor practice
+│   └── exercicios_avulsos/         # Standalone algorithm exercises
+│       ├── divisores.cpp           # Divisor practice
+│       ├── frogg.cpp               # Dynamic programming practice
+│       ├── frogg2.cpp              # A variation of the Frog problem
+│       ├── knapsack_1.cpp          # The classic knapsack problem
+│       └── vacation.cpp            # Activity-selection dynamic programming
 ├── LICENSE                         # MIT License
 └── README.md                       # You are here
 ```
