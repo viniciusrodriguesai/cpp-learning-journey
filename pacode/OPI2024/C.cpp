@@ -6,5 +6,13 @@ int main() {
     int N;
     cin >> N;
     unordered_map<string, int> freq;
-
+    for (int i = 0; i < N; ++i) {
+        string s;
+        cin >> s;
+        ++freq[s];
+    }
+    int max_freq = 0;
+    for (auto& p : freq) {
+        if (p.second > max_freq) max_freq = p.second;
+    }
 }
