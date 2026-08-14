@@ -16,9 +16,12 @@ int main(){
 
     if(res >= 60){
         cout << "\nAluno Aprovado\n";
-    }else{
-        cout << "\nAluno Reprovado\n";
+    }else if(res >= 40){
+        cout << "\nAluno em Recuperacao\n";
         }
+    else{
+        cout << "\nAluno Reprovado\n";
+    }
 
 
     return 0;
