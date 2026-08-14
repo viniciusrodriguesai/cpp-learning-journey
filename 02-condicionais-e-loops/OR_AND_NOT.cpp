@@ -1,11 +1,11 @@
-#include <ionstream>
+#include <iostream>
 
 using namespace std;
 
 int main() {
-int num = 8;
+int num = 9;
 
-if (num > 4 && num < 7) {
+if (num < 3 || num > 8) {
 cout << "\n\nvalor aceito" << endl;
 } else {
 cout << "\nnao aceito" << endl;
