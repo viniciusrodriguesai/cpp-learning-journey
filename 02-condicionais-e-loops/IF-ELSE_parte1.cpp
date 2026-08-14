@@ -10,7 +10,8 @@ int main(){
 
     if(num2 > num1){
          cout << "Reusltado Verdadeiro";
-    }
+    }else{
+         cout << "Resultado falso";}
 
 
 }
