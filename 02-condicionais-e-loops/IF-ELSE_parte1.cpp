@@ -8,7 +8,7 @@ int main(){
     char opc='s';
 
     if(num >= 10){
-         cout << "Valor de num maior que 10";
+         cout << "Valor de num maior ou igual que 10";
     }
 
 
