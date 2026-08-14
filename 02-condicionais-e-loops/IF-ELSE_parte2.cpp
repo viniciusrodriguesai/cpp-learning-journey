@@ -14,5 +14,12 @@ int main(){
 
     res = n1 + n2;
 
+    if(res >= 60){
+        cout << "\nAluno Aprovado\n";
+    }else{
+        cout << "\nAluno Reprovado\n";
+        }
+
+
     return 0;
 }
