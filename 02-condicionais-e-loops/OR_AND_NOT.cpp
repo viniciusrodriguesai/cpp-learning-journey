@@ -2,15 +2,13 @@
 
 using namespace std;
 
-using namespace std;
-
 int main() {
-int num = 12;
+int num = 1; // 1 representa verdadeiro
 
-if ((num >= 3 && num <= 6) || (num > 9 && num < 15) || (num > 15 && num < 20)) {
-cout << "\n\nvalor aceito" << endl;
+if (!num) {
+cout << "\nvou ao clube" << endl;
 } else {
-cout << "\nnao aceito" << endl;
+cout << "\nvou ao cinema" << endl;
 }
 
 return 0;
