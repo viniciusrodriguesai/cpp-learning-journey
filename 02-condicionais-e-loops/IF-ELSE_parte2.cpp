@@ -7,6 +7,10 @@ int main(){
     int n1,n2,res;
     char opc;
 
+
+    inicio:
+
+
     cout <<"Digite o valor da nota 1: ";
     cin >> n1;
     cout << "Digite o valor da nota 2: ";
@@ -23,6 +27,12 @@ int main(){
         cout << "\nAluno Reprovado\n";
     }
 
+    cout << "\nDigitar outras notas?[s/n]\n";
+    cin >> opc;
+
+    if(opc == 's' or opc=='S'){
+        goto inicio;
+    }
 
     return 0;
 }
