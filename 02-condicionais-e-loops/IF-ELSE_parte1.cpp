@@ -4,11 +4,12 @@ using namespace std;
 
 int main(){
 
-    int num=10;
+    int num1=10;
+    int num2=50;
     char opc='s';
 
-    if(num >= 10){
-         cout << "Valor de num maior ou igual que 10";
+    if(num2 > num1){
+         cout << "Reusltado Verdadeiro";
     }
 
 
